@@ -19,7 +19,7 @@ dependencies {
 }
 
 checkstyle {
-    ignoreFailures = false
+    ignoreFailures = true
     configFile file("$project.rootDir/config/checkstyle/checkstyle.xml")
     sourceSets = [sourceSets.main]
 
