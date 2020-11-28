@@ -25,6 +25,7 @@ checkstyle {
 
     checkstyleMain {
         source = 'src/main/java'
+        excludes = [ '**/AppRunner.java' ]
     }
 }
 
