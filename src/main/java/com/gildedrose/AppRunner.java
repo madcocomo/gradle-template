@@ -7,6 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * 不得修改此文件
+ */
 public class AppRunner {
     private static final List<String> DEFAULT_ITEMS = Arrays.asList(
             "+5 Dexterity Vest; 10; 20",
@@ -17,7 +20,8 @@ public class AppRunner {
             "Backstage passes to a TAFKAL80ETC concert; 15; 20",
             "Backstage passes to a TAFKAL80ETC concert; 10; 49",
             "Backstage passes to a TAFKAL80ETC concert; 5; 49",
-            "Backstage passes to a TAFKAL80ETC concert; 1; 20"
+            "Backstage passes to a TAFKAL80ETC concert; 1; 20",
+            "Conjured Mana Cake; 3; 6"
     );
     private static final int DEFAULT_DAYS = 3;
 
@@ -26,7 +30,7 @@ public class AppRunner {
         List<String> items = DEFAULT_ITEMS;
 
         if (args.length > 1) {
-            items = readContentFrom(args[0], DEFAULT_ITEMS).orElse(items);
+            items = readContentFrom(args[0]).orElse(items);
             days = Integer.parseInt(args[1]) + 1;
         }
         updateAndPrintItems(days, createItemsFromString(items));
@@ -69,11 +73,11 @@ public class AppRunner {
     private static Item[] createItemsFromString(List<String> itemStrings) {
         return itemStrings.stream()
                 .map(str -> str.split(" *; *"))
-                .map(strs -> new Item(strs[0], Integer.parseInt(strs[1]), Integer.parseInt(strs[2])))
+                .map(strs -> GildedRose.createItem(strs[0], Integer.parseInt(strs[1]), Integer.parseInt(strs[2])))
                 .toArray(Item[]::new);
     }
 
-    private static Optional<List<String>> readContentFrom(String arg, List<String> itemStrings) throws IOException {
+    private static Optional<List<String>> readContentFrom(String arg) throws IOException {
         File itemsFile = new File(arg);
         if (itemsFile.exists()) {
             return Optional.of(Files.readAllLines(itemsFile.toPath()));

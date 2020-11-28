@@ -7,6 +7,10 @@ class GildedRose {
         this.items = items;
     }
 
+    static Item createItem(String name, int sell_in, int quality) {
+        return new Item(name, sell_in, quality);
+    }
+
     public void update_quality() {
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Aged Brie")
