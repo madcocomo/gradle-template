@@ -19,7 +19,7 @@ public class AppRunnerTest {
     public void safeNetTest() throws URISyntaxException, IOException {
         OutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        AppRunner.main(new String[0]);
+        AppRunner.main(new String[]{getClass().getResource("/items.txt").getPath(), "6"});
         byte[] bytes = Files.readAllBytes(Paths.get(getClass().getResource("/expected.txt").toURI()));
         String expected = new String(bytes, Charsets.UTF_8);
         assertEquals(expected, out.toString());
