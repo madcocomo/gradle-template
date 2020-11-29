@@ -41,7 +41,7 @@
     </module>
 
     <module name="FileLength" >
-        <property name="max" value="80"/>
+        <property name="max" value="50"/>
         <property name="severity" value="error" />
     </module>
 
