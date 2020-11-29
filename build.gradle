@@ -25,6 +25,7 @@ checkstyle {
 
     checkstyleMain {
         source = 'src/main/java'
+        excludes = [ '**/AppRunner.java' ]
     }
 }
 
@@ -37,6 +38,7 @@ jacocoTestReport {
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
             fileTree(dir: it, exclude: [
+                    '**/AppRunner.class'
             ])
         }))
     }
@@ -47,6 +49,7 @@ jacocoTestCoverageVerification {
         rule {
             element = 'CLASS'
             excludes = [
+                 '**.AppRunner'
             ]
 
             limit {

@@ -1,6 +1,4 @@
 build-job:
   stage: build
   script:
-    - pwd
-    - ls
     - gradle check
