@@ -41,7 +41,7 @@ public class AppRunner {
         System.out.println("OMGHAI!");
         for (int i = 0; i < days; i++) {
             printItemsInDay(items, i);
-            app.update_quality();
+            app.updateQuality();
         }
     }
 

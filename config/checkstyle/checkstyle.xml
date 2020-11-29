@@ -41,13 +41,13 @@
     </module>
 
     <module name="FileLength" >
-        <property name="max" value="50"/>
+        <property name="max" value="80"/>
         <property name="severity" value="error" />
     </module>
 
     <module name="LineLength">
         <property name="fileExtensions" value="java"/>
-        <property name="max" value="150"/>
+        <property name="max" value="120"/>
         <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
         <property name="severity" value="error"/>
     </module>
@@ -56,12 +56,12 @@
         <module name="OuterTypeFilename"/>
         <module name="MethodLength">
             <property name="tokens" value="METHOD_DEF"/>
-            <property name="max" value="10"/>
+            <property name="max" value="30"/>
             <property name="countEmpty" value="false"/>
             <property name="severity" value="error" />
         </module>
         <module name="CyclomaticComplexity">
-            <property name="max" value="4"/>
+            <property name="max" value="7"/>
             <property name="severity" value="error"/>
         </module>
         <module name="ParameterNumber">

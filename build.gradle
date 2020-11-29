@@ -19,7 +19,7 @@ dependencies {
 }
 
 checkstyle {
-    ignoreFailures = true
+    ignoreFailures = false
     configFile file("$project.rootDir/config/checkstyle/checkstyle.xml")
     sourceSets = [sourceSets.main]
 
@@ -75,5 +75,6 @@ jacocoTestCoverageVerification {
         }
     }
 }
+checkstyleMain.dependsOn test
 check.dependsOn jacocoTestCoverageVerification
 jacocoTestCoverageVerification.dependsOn jacocoTestReport
