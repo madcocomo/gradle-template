@@ -81,10 +81,6 @@
             <property name="id" value="Visibility-L2"/>
             <property name="severity" value="ignore"/>
         </module>
-        <module name="VisibilityModifier">
-            <property name="id" value="Visibility-L1"/>
-            <property name="severity" value="warning"/>
-        </module>
     </module>
     <!-- =======end exam check rules======= -->
 
