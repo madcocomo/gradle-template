@@ -33,49 +33,60 @@
         <property name="optional" value="true"/>
     </module>
 
-    <!-- exam check rules -->
+    <!-- =======exam check rules======= -->
     <module name="FileLength" >
-        <property name="id" value="FileLength-Strict"/>
-        <property name="max" value="30"/>
-        <property name="severity" value="warning" />
-    </module>
-
-    <module name="FileLength" >
-        <property name="id" value="FileLength"/>
+        <property name="id" value="FileLength-L1"/>
         <property name="max" value="50"/>
         <property name="severity" value="error" />
     </module>
 
     <module name="TreeWalker">
         <module name="MethodLength">
-            <property name="id" value="MethodLength-Strict"/>
+            <property name="id" value="MethodLength-L3"/>
             <property name="max" value="8"/>
             <property name="countEmpty" value="false"/>
             <property name="severity" value="warning" />
         </module>
 
         <module name="MethodLength">
-            <property name="id" value="MethodLength"/>
+            <property name="id" value="MethodLength-L2"/>
             <property name="max" value="12"/>
             <property name="countEmpty" value="false"/>
             <property name="severity" value="error" />
         </module>
 
+        <module name="MethodLength">
+            <property name="id" value="MethodLength-L1"/>
+            <property name="max" value="32"/>
+            <property name="countEmpty" value="false"/>
+            <property name="severity" value="error" />
+        </module>
+
         <module name="CyclomaticComplexity">
-            <property name="id" value="CyclomaticComplexity-Strict"/>
+            <property name="id" value="CyclomaticComplexity-L3"/>
             <property name="max" value="2"/>
             <property name="severity" value="warning"/>
         </module>
         <module name="CyclomaticComplexity">
-            <property name="id" value="CyclomaticComplexity"/>
+            <property name="id" value="CyclomaticComplexity-L2"/>
             <property name="max" value="4"/>
             <property name="severity" value="error"/>
         </module>
-        <module name="VisibilityModifier">
+        <module name="CyclomaticComplexity">
+            <property name="id" value="CyclomaticComplexity-L1"/>
+            <property name="max" value="7"/>
             <property name="severity" value="error"/>
         </module>
+        <module name="VisibilityModifier">
+            <property name="id" value="CyclomaticComplexity-L2"/>
+            <property name="severity" value="error"/>
+        </module>
+        <module name="VisibilityModifier">
+            <property name="id" value="CyclomaticComplexity-L1"/>
+            <property name="severity" value="warning"/>
+        </module>
     </module>
-    <!-- end exam check rules -->
+    <!-- =======end exam check rules======= -->
 
     <!-- Checks for whitespace                               -->
     <!-- See http://checkstyle.org/config_whitespace.html -->
@@ -264,14 +275,7 @@
             <message key="ws.notPreceded"
                      value="GenericWhitespace ''{0}'' is not preceded with whitespace."/>
         </module>
-        <module name="Indentation">
-            <property name="basicOffset" value="4"/>
-            <property name="braceAdjustment" value="0"/>
-            <property name="caseIndent" value="2"/>
-            <property name="throwsIndent" value="4"/>
-            <property name="lineWrappingIndentation" value="4"/>
-            <property name="arrayInitIndent" value="2"/>
-        </module>
+        <module name="Indentation"/>
         <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
             <property name="allowedAbbreviationLength" value="1"/>
@@ -334,12 +338,7 @@
             <property name="allowedAnnotations" value="Override, Test"/>
             <property name="tokens" value="METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF"/>
         </module>
-        <module name="MethodName">
-            <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9_]*$"/>
-            <message key="name.invalidPattern"
-                     value="Method name ''{0}'' must match pattern ''{1}''."/>
-            <property name="severity" value="error"/>
-        </module>
+        <module name="MethodName"/>
         <module name="SingleLineJavadoc">
             <property name="ignoreInlineTags" value="false"/>
         </module>
