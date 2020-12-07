@@ -71,6 +71,9 @@
             <property name="max" value="4"/>
             <property name="severity" value="error"/>
         </module>
+        <module name="VisibilityModifier">
+            <property name="severity" value="error"/>
+        </module>
     </module>
     <!-- end exam check rules -->
 

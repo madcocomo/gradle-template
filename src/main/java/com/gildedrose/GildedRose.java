@@ -1,8 +1,8 @@
 package com.gildedrose;
 
 class GildedRose {
-    private static ItemFactory itemFactory = new ItemFactory();
-    Item[] items;
+    private static final ItemFactory itemFactory = new ItemFactory();
+    private final Item[] items;
 
     public GildedRose(Item[] items) {
         this.items = items;

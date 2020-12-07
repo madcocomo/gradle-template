@@ -7,6 +7,6 @@ public class AgedBrie extends Item {
 
     @Override
     protected int getQualityRate() {
-        return -1 * super.getQualityRate();
+        return isExpiredIn(0) ? 2 : 1;
     }
 }

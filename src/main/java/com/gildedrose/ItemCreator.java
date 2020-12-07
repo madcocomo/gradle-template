@@ -3,8 +3,8 @@ package com.gildedrose;
 import java.util.function.Predicate;
 
 class ItemCreator {
-    Predicate<String> isType;
-    ItemConstructor constructor;
+    private final Predicate<String> isType;
+    private final ItemConstructor constructor;
 
     @FunctionalInterface
     interface ItemConstructor {

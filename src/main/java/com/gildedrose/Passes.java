@@ -1,6 +1,11 @@
 package com.gildedrose;
 
+import com.google.common.collect.ImmutableMap;
+import java.util.Map;
+
 public class Passes extends Item {
+    private static final Map<Integer, Integer> RATES = ImmutableMap.of(5,3,10,2);
+
     public Passes(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
@@ -15,12 +20,8 @@ public class Passes extends Item {
 
     @Override
     protected int getQualityRate() {
-        if (isExpiredIn(5)) {
-            return 3;
-        }
-        if (isExpiredIn(10)) {
-            return 2;
-        }
-        return 1;
+        return RATES.entrySet().stream()
+                .filter(entry -> isExpiredIn(entry.getKey()))
+                .findFirst().map(Map.Entry::getValue).orElse(1);
     }
 }

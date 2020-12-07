@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class ItemFactory {
-    static List<ItemCreator> CREATORS = Arrays.asList(
+    private static final List<ItemCreator> CREATORS = Arrays.asList(
             new ItemCreator(matchName("Aged Brie"), AgedBrie::new),
             new ItemCreator(matchName("Sulfuras, Hand of Ragnaros"), Sulfuras::new),
             new ItemCreator(matchName("Backstage passes to a TAFKAL80ETC concert"), Passes::new)
