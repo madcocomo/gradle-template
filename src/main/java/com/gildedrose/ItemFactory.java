@@ -8,7 +8,8 @@ public class ItemFactory {
     private static final List<ItemCreator> CREATORS = Arrays.asList(
             new ItemCreator(matchName("Aged Brie"), AgedBrie::new),
             new ItemCreator(matchName("Sulfuras, Hand of Ragnaros"), Sulfuras::new),
-            new ItemCreator(matchName("Backstage passes to a TAFKAL80ETC concert"), Passes::new)
+            new ItemCreator(matchName("Backstage passes to a TAFKAL80ETC concert"), Passes::new),
+            new ItemCreator(matchName("Conjured Mana Cake"), Conjured::new)
     );
 
     private static Predicate<String> matchName(String expectName) {

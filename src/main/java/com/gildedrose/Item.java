@@ -17,8 +17,8 @@ public class Item {
     }
 
     void update() {
-        updateSellIn();
         updateQualityBy(getQualityRate());
+        updateSellIn();
     }
 
     protected int getQualityRate() {
@@ -26,7 +26,7 @@ public class Item {
     }
 
     public boolean isExpiredIn(int days) {
-        return sellIn < days;
+        return sellIn < days + 1;
     }
 
     private void updateQualityBy(int rate) {
@@ -35,11 +35,7 @@ public class Item {
         quality = Math.max(quality, 0);
     }
 
-    protected void clearQuality() {
-        quality = 0;
-    }
-
     protected void updateSellIn() {
-        sellIn = sellIn - 1;
+        sellIn = Math.max(sellIn - 1, 0);
     }
 }

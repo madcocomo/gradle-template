@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 
 public class Passes extends Item {
-    private static final Map<Integer, Integer> RATES = ImmutableMap.of(5,3,10,2);
+    private static final Map<Integer, Integer> RATES = ImmutableMap.of(0,-50, 5,3, 10,2);
 
     public Passes(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
@@ -13,9 +13,6 @@ public class Passes extends Item {
     @Override
     void update() {
         super.update();
-        if (isExpiredIn(0)) {
-            clearQuality();
-        }
     }
 
     @Override
