@@ -6,16 +6,7 @@ public class AgedBrie extends Item {
     }
 
     @Override
-    void update() {
-        if (quality < 50) {
-            quality = quality + 1;
-        }
-        sellIn = sellIn - 1;
-        if (sellIn < 0) {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
-        }
+    protected int getQualityRate() {
+        return -1 * super.getQualityRate();
     }
-
 }

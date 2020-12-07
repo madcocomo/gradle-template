@@ -7,23 +7,20 @@ public class Passes extends Item {
 
     @Override
     void update() {
-        if (quality < 50) {
-            quality = quality + 1;
-            if (sellIn < 11) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
-            }
-            if (sellIn < 6) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
-            }
-        }
-        sellIn = sellIn - 1;
-        if (sellIn < 0) {
-            quality = 0;
+        super.update();
+        if (isExpiredIn(0)) {
+            clearQuality();
         }
     }
 
+    @Override
+    protected int getQualityRate() {
+        if (isExpiredIn(5)) {
+            return 3;
+        }
+        if (isExpiredIn(10)) {
+            return 2;
+        }
+        return 1;
+    }
 }
