@@ -78,12 +78,8 @@
             <property name="severity" value="error"/>
         </module>
         <module name="VisibilityModifier">
-            <property name="id" value="CyclomaticComplexity-L2"/>
+            <property name="id" value="VisibilityModifier-L2"/>
             <property name="severity" value="error"/>
-        </module>
-        <module name="VisibilityModifier">
-            <property name="id" value="CyclomaticComplexity-L1"/>
-            <property name="severity" value="warning"/>
         </module>
     </module>
     <!-- =======end exam check rules======= -->
